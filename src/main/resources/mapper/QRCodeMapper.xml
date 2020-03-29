@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.scancode.demo.mapper.QRCodeMapper">
+    <insert id="insertQrcode" parameterType="com.scancode.demo.entity.QRCode" useGeneratedKeys="true" keyProperty="id">
+        insert into QRCode (code,createTime) values (#{code},#{createTime})
+    </insert>
+    <select id="selectQrcode" resultType="com.scancode.demo.entity.QRCode" parameterType="string">
+        select * from QRCode where code = #{code,jdbcType=String}
+    </select>
+</mapper>
